@@ -302,3 +302,11 @@ Processing by Api::V1::RestaurantsController#index as HTML
 Completed 200 OK in 66ms (Views: 49.3ms | ActiveRecord: 41.5ms | Allocations: 7951)
 
 
+Started GET "/" for 172.28.0.1 at 2022-07-21 13:11:25 +0900
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.6ms | Allocations: 426)
+Completed 200 OK in 28ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 3350)
+
+
