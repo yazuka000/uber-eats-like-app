@@ -253,3 +253,52 @@ Processing by Api::V1::FoodsController#index as HTML
 Completed 200 OK in 83ms (Views: 20.3ms | ActiveRecord: 24.7ms | Allocations: 15260)
 
 
+Started GET "/" for 172.28.0.1 at 2022-07-21 09:08:56 +0900
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.6ms | Allocations: 531)
+Completed 200 OK in 83ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 4477)
+
+
+Started GET "/favicon.ico" for 172.28.0.1 at 2022-07-21 09:08:57 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 172.28.0.1 at 2022-07-21 09:20:23 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.8ms | Allocations: 209)
+Completed 200 OK in 26ms (Views: 22.1ms | Allocations: 968)
+
+
+Started GET "/" for 172.28.0.1 at 2022-07-21 09:31:46 +0900
+  [1m[35m (26.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.1ms | Allocations: 426)
+Completed 200 OK in 45ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 3350)
+
+
+Started GET "/" for 172.28.0.1 at 2022-07-21 09:36:17 +0900
+  [1m[35m (25.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.8ms | Allocations: 426)
+Completed 200 OK in 34ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 3350)
+
+
+Started GET "/" for 172.28.0.1 at 2022-07-21 09:45:21 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.9ms | Allocations: 209)
+Completed 200 OK in 14ms (Views: 12.7ms | Allocations: 1001)
+
+
+Started GET "/api/v1/restaurants" for 172.28.0.1 at 2022-07-21 09:45:55 +0900
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (22.8ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants`[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7:in `index'
+Completed 200 OK in 66ms (Views: 49.3ms | ActiveRecord: 41.5ms | Allocations: 7951)
+
+
