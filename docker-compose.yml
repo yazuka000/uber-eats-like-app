@@ -25,19 +25,20 @@ services:
       TZ: Asia/Tokyo
       RAILS_ENV: development
     ports:
-      - 3001:3000
+      - 3000:3000
     depends_on:
       - db
 
   front:
     build:
-      context: ./frontend/
+      context: .
       dockerfile: Dockerfile
     volumes:
-      - ./frontend:/usr/src/app
-    command: sh -c "cd app && yarn && yarn start"
+      - .:/usr/src/app
+    command: sh -c "cd frontend && yarn start"
     ports:
-      - "4000:3000"
+      - "3001:3000"
+    stdin_open: true
 
 volumes:
   mysql-data:
