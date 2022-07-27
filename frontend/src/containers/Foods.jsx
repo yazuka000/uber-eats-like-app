@@ -55,6 +55,10 @@ const ItemWrapper = styled.div`
   margin: 16px;
 `;
 
+const submitOrder = () => {
+  console.log("登録ボタンが押された！");
+};
+
 export const Foods = ({ match }) => {
   const [foodsState, dispatch] = useReducer(foodsReducer, foodsInitialState);
 
@@ -120,12 +124,29 @@ export const Foods = ({ match }) => {
       </FoodsList>
       {state.isOpenOrderDialog && (
         <FoodOrderDialog
-          food={state.selectedFood}
           isOpen={state.isOpenOrderDialog}
+          food={state.selectedFood}
+          countNumber={state.selectedFoodCount}
+          onClickCountUp={() =>
+            setState({
+              ...state,
+              selectedFoodCount: state.selectedFoodCount + 1,
+            })
+          }
+          onClickCountDown={() =>
+            setState({
+              ...state,
+              selectedFoodCount: state.selectedFoodCount - 1,
+            })
+          }
+          onClickOrder={() => submitOrder()}
+          // モーダル閉じるとき、全初期化
           onClose={() =>
             setState({
               ...state,
               isOpenOrderDialog: false,
+              selectedFood: null,
+              selectedFoodCount: 1,
             })
           }
         />
