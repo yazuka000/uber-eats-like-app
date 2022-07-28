@@ -88,7 +88,7 @@ export const FoodOrderDialog = ({
             />
           </CountItem>
         </CountersWrapper>
-        <OrderButton>
+        <OrderButton onClick={() => onClickOrder()}>
           <OrderTextWrapper>
             <OrderButtonTextWrapper>
               {`${countNumber}点を注文に追加`}
