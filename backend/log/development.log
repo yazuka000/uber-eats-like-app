@@ -4914,3 +4914,104 @@ Completed 500 Internal Server Error in 1078ms (ActiveRecord: 20.2ms | Allocation
 ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'line_foods.restarurant_id' in 'where clause'):
   
 app/controllers/api/v1/line_foods_controller.rb:22:in `create'
+Started GET "/api/v1/restaurants" for 172.28.0.1 at 2022-07-30 14:22:25 +0900
+  [1m[35m (25.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (25.8ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants`[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7:in `index'
+Completed 200 OK in 1107ms (Views: 13.3ms | ActiveRecord: 53.2ms | Allocations: 9377)
+
+
+Started GET "/api/v1/restaurants/1/foods" for 172.28.0.1 at 2022-07-30 14:22:28 +0900
+Processing by Api::V1::FoodsController#index as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (5.5ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:5:in `index'
+  [1m[36mFood Load (4.5ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`restaurant_id` = 1[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:8:in `index'
+Completed 200 OK in 1130ms (Views: 18.3ms | ActiveRecord: 20.5ms | Allocations: 11104)
+
+
+Started POST "/api/v1/line_foods" for 172.28.0.1 at 2022-07-30 14:22:33 +0900
+Processing by Api::V1::LineFoodsController#create as HTML
+  Parameters: {"food_id"=>1, "count"=>8, "line_food"=>{"food_id"=>1, "count"=>8}}
+  [1m[36mFood Load (7.6ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:59:in `set_food'
+  [1m[36mRestaurant Load (4.8ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:22:in `create'
+  [1m[36mLineFood Exists? (13.2ms)[0m  [1m[34mSELECT 1 AS one FROM `line_foods` WHERE `line_foods`.`active` = TRUE AND `line_foods`.`restaurant_id` != 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:22:in `create'
+  [1m[36mLineFood Load (1.8ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`food_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:63:in `set_line_food'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:31:in `create'
+  [1m[36mLineFood Create (18.4ms)[0m  [1m[32mINSERT INTO `line_foods` (`food_id`, `restaurant_id`, `count`, `active`, `created_at`, `updated_at`) VALUES (1, 1, 8, TRUE, '2022-07-30 05:22:34.774090', '2022-07-30 05:22:34.774090')[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:31:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:31:in `create'
+Completed 201 Created in 1122ms (Views: 0.2ms | ActiveRecord: 66.1ms | Allocations: 10381)
+
+
+Started GET "/api/v1/restaurants" for 172.28.0.1 at 2022-07-30 14:22:53 +0900
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (2.2ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants`[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7:in `index'
+Completed 200 OK in 1013ms (Views: 8.2ms | ActiveRecord: 2.2ms | Allocations: 996)
+
+
+Started GET "/api/v1/restaurants/3/foods" for 172.28.0.1 at 2022-07-30 14:22:55 +0900
+Processing by Api::V1::FoodsController#index as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[36mRestaurant Load (6.0ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:5:in `index'
+  [1m[36mFood Load (5.9ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`restaurant_id` = 3[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:8:in `index'
+Completed 200 OK in 1039ms (Views: 9.9ms | ActiveRecord: 11.9ms | Allocations: 2520)
+
+
+Started POST "/api/v1/line_foods" for 172.28.0.1 at 2022-07-30 14:22:59 +0900
+Processing by Api::V1::LineFoodsController#create as HTML
+  Parameters: {"food_id"=>27, "count"=>3, "line_food"=>{"food_id"=>27, "count"=>3}}
+  [1m[36mFood Load (6.3ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 27 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:59:in `set_food'
+  [1m[36mRestaurant Load (4.8ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:22:in `create'
+  [1m[36mLineFood Exists? (7.6ms)[0m  [1m[34mSELECT 1 AS one FROM `line_foods` WHERE `line_foods`.`active` = TRUE AND `line_foods`.`restaurant_id` != 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:22:in `create'
+  [1m[36mLineFood Load (3.4ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`restaurant_id` != 3 ORDER BY `line_foods`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:24:in `create'
+  [1m[36mRestaurant Load (1.5ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:24:in `create'
+  [1m[36mCACHE Food Load (0.0ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 27 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:25:in `create'
+  [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:25:in `create'
+Completed 406 Not Acceptable in 1070ms (Views: 0.1ms | ActiveRecord: 23.6ms | Allocations: 4264)
+
+
+Started PUT "/api/v1/line_foods/replace" for 172.28.0.1 at 2022-07-30 14:23:05 +0900
+Processing by Api::V1::LineFoodsController#replace as HTML
+  Parameters: {"food_id"=>27, "count"=>3, "line_food"=>{"food_id"=>27, "count"=>3}}
+  [1m[36mFood Load (6.2ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 27 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:59:in `set_food'
+  [1m[36mRestaurant Load (5.0ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:41:in `replace'
+  [1m[36mLineFood Load (3.7ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`active` = TRUE AND `line_foods`.`restaurant_id` != 3[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:41:in `replace'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:42:in `block in replace'
+  [1m[36mLineFood Update (10.1ms)[0m  [1m[33mUPDATE `line_foods` SET `line_foods`.`active` = FALSE, `line_foods`.`updated_at` = '2022-07-30 05:23:06.673285' WHERE `line_foods`.`id` = 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:42:in `block in replace'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:42:in `block in replace'
+  [1m[36mLineFood Load (1.8ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`food_id` = 27 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:63:in `set_line_food'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:47:in `replace'
+  [1m[36mLineFood Create (1.7ms)[0m  [1m[32mINSERT INTO `line_foods` (`food_id`, `restaurant_id`, `count`, `active`, `created_at`, `updated_at`) VALUES (27, 3, 3, TRUE, '2022-07-30 05:23:06.705742', '2022-07-30 05:23:06.705742')[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:47:in `replace'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:47:in `replace'
+Completed 201 Created in 1086ms (Views: 0.6ms | ActiveRecord: 37.2ms | Allocations: 6374)
+
+
