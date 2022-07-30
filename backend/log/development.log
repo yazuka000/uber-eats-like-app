@@ -4430,3 +4430,155 @@ Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:01:47 +0900
   
 ActionController::RoutingError (No route matches [GET] "/ws"):
   
+Started GET "/api/v1/restaurants" for 172.28.0.1 at 2022-07-30 09:06:36 +0900
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:06:36 +0900
+  [1m[35m (21.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (22.5ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants`[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7:in `index'
+Completed 200 OK in 1088ms (Views: 5.7ms | ActiveRecord: 45.7ms | Allocations: 29545)
+
+
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:06:37 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:06:39 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/api/v1/restaurants/2/foods" for 172.28.0.1 at 2022-07-30 09:06:40 +0900
+Processing by Api::V1::FoodsController#index as HTML
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mRestaurant Load (4.5ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:5:in `index'
+  [1m[36mFood Load (5.6ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`restaurant_id` = 2[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:8:in `index'
+Completed 200 OK in 1080ms (Views: 15.5ms | ActiveRecord: 20.0ms | Allocations: 11064)
+
+
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:06:44 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started POST "/api/v1/line_foods" for 172.28.0.1 at 2022-07-30 09:06:44 +0900
+Processing by Api::V1::LineFoodsController#create as HTML
+  Parameters: {"count"=>1, "line_food"=>{"count"=>1}}
+Completed 404 Not Found in 1003ms (ActiveRecord: 6.5ms | Allocations: 232)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Food without an ID):
+  
+app/controllers/api/v1/line_foods_controller.rb:43:in `set_food'
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:06:52 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/" for 172.28.0.1 at 2022-07-30 09:07:05 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.2ms | Allocations: 213)
+Completed 200 OK in 21ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 2188)
+
+
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:07:08 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started POST "/api/v1/line_foods" for 172.28.0.1 at 2022-07-30 09:07:13 +0900
+Processing by Api::V1::LineFoodsController#create as HTML
+  Parameters: {"count"=>1, "line_food"=>{"count"=>1}}
+Completed 404 Not Found in 1005ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Food without an ID):
+  
+app/controllers/api/v1/line_foods_controller.rb:43:in `set_food'
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:07:40 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:08:44 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:10:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:15:11 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:23:43 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:45:05 +0900
+Started GET "/api/v1/restaurants/2/foods" for 172.28.0.1 at 2022-07-30 09:45:05 +0900
+  [1m[35m (50.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Processing by Api::V1::FoodsController#index as HTML
+  Parameters: {"restaurant_id"=>"2"}
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:45:06 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+  [1m[36mRestaurant Load (55.2ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:5:in `index'
+  [1m[36mFood Load (6.7ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`restaurant_id` = 2[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:8:in `index'
+Completed 200 OK in 1222ms (Views: 26.1ms | ActiveRecord: 126.4ms | Allocations: 60835)
+
+
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:45:09 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:45:13 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:45:22 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for 172.28.0.1 at 2022-07-30 09:45:38 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/api/v1/restaurants" for 172.28.0.1 at 2022-07-30 09:46:12 +0900
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (29.8ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants`[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7:in `index'
+Completed 200 OK in 1096ms (Views: 7.9ms | ActiveRecord: 53.2ms | Allocations: 9379)
+
+
+Started GET "/api/v1/restaurants/2/foods" for 172.28.0.1 at 2022-07-30 09:46:25 +0900
+Processing by Api::V1::FoodsController#index as HTML
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mRestaurant Load (3.1ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:5:in `index'
+  [1m[36mFood Load (7.4ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`restaurant_id` = 2[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:8:in `index'
+Completed 200 OK in 1181ms (Views: 38.2ms | ActiveRecord: 36.1ms | Allocations: 11082)
+
+
+Started POST "/api/v1/line_foods" for 172.28.0.1 at 2022-07-30 09:46:35 +0900
+Processing by Api::V1::LineFoodsController#create as HTML
+  Parameters: {"count"=>1, "line_food"=>{"count"=>1}}
+Completed 404 Not Found in 1002ms (ActiveRecord: 12.8ms | Allocations: 243)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Food without an ID):
+  
+app/controllers/api/v1/line_foods_controller.rb:43:in `set_food'
