@@ -89,7 +89,7 @@ export const Foods = ({ match }) => {
   const submitOrder = () => {
     // console.log("登録ボタンが押された！");
     postLineFoods({
-      FoodId: state.selectedFood.id,
+      foodId: state.selectedFood.id,
       count: state.selectedFoodCount,
     })
       .then(() => history.push("/orders"))
@@ -110,7 +110,7 @@ export const Foods = ({ match }) => {
 
   const replaceOrder = () => {
     replaceLineFoods({
-      FoodId: state.selectedFood.id,
+      foodId: state.selectedFood.id,
       count: state.selectedFoodCount,
     }).then(() => history.push("/orders"));
   };
@@ -194,7 +194,7 @@ export const Foods = ({ match }) => {
           }
           existingRestaurantName={state.existingRestaurantName}
           newRestaurantName={state.newRestaurantName}
-          onClickSubmit={replaceOrder()}
+          onClickSubmit={() => replaceOrder()}
         />
       )}
     </Fragment>

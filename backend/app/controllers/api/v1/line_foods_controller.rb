@@ -62,12 +62,12 @@ module Api
       def set_line_food(ordered_food)
         if ordered_food.line_food.present?
           @line_food = ordered_food.line_food
-          @line_food.attribute = {
-            count: orderes_food.line_food.count + params[:count],
+          @line_food.attributes = {
+            count: ordered_food.line_food.count + params[:count],
             active: true
           }
         else
-          @line_food = ordered_food.built_line_food(
+          @line_food = ordered_food.build_line_food(
             count: params[:count],
             restaurant: ordered_food.restaurant,
             active: true
