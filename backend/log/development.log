@@ -5015,3 +5015,35 @@ Processing by Api::V1::LineFoodsController#replace as HTML
 Completed 201 Created in 1086ms (Views: 0.6ms | ActiveRecord: 37.2ms | Allocations: 6374)
 
 
+  [1m[36mLineFood Load (1.4ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods`[0m
+  [1m[36mLineFood Load (4.5ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`active` = TRUE[0m
+Started GET "/api/v1/restaurants" for 172.28.0.1 at 2022-07-31 10:28:34 +0900
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (3.7ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants`[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7:in `index'
+Completed 200 OK in 1051ms (Views: 41.4ms | ActiveRecord: 6.4ms | Allocations: 1098)
+
+
+Started GET "/api/v1/restaurants/2/foods" for 172.28.0.1 at 2022-07-31 10:35:23 +0900
+Processing by Api::V1::FoodsController#index as HTML
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mRestaurant Load (6.5ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:5:in `index'
+  [1m[36mFood Load (4.4ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`restaurant_id` = 2[0m
+  ↳ app/controllers/api/v1/foods_controller.rb:8:in `index'
+Completed 200 OK in 1048ms (Views: 10.4ms | ActiveRecord: 14.2ms | Allocations: 2600)
+
+
+Started GET "/api/v1/line_foods" for 172.28.0.1 at 2022-07-31 10:35:24 +0900
+Processing by Api::V1::LineFoodsController#index as HTML
+  [1m[36mLineFood Exists? (8.7ms)[0m  [1m[34mSELECT 1 AS one FROM `line_foods` WHERE `line_foods`.`active` = TRUE LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:9:in `index'
+  [1m[36mLineFood Load (3.2ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`active` = TRUE[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:11:in `map'
+  [1m[36mRestaurant Load (1.5ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:12:in `index'
+  [1m[36mFood Load (1.7ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 27 LIMIT 1[0m
+  ↳ app/models/line_food.rb:12:in `total_amount'
+Completed 200 OK in 1050ms (Views: 0.5ms | ActiveRecord: 15.1ms | Allocations: 2710)
+
+
