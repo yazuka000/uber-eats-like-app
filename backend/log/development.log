@@ -5047,3 +5047,42 @@ Processing by Api::V1::LineFoodsController#index as HTML
 Completed 200 OK in 1050ms (Views: 0.5ms | ActiveRecord: 15.1ms | Allocations: 2710)
 
 
+Started GET "/api/v1/line_foods" for 172.28.0.1 at 2022-07-31 10:47:24 +0900
+Processing by Api::V1::LineFoodsController#index as HTML
+  [1m[36mLineFood Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM `line_foods` WHERE `line_foods`.`active` = TRUE LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:9:in `index'
+  [1m[36mLineFood Load (1.3ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`active` = TRUE[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:11:in `map'
+  [1m[36mRestaurant Load (1.6ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:12:in `index'
+  [1m[36mFood Load (2.0ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 27 LIMIT 1[0m
+  ↳ app/models/line_food.rb:12:in `total_amount'
+Completed 200 OK in 1041ms (Views: 0.3ms | ActiveRecord: 7.1ms | Allocations: 2613)
+
+
+Started GET "/api/v1/line_foods" for 172.28.0.1 at 2022-07-31 10:48:29 +0900
+Processing by Api::V1::LineFoodsController#index as HTML
+  [1m[36mLineFood Exists? (5.5ms)[0m  [1m[34mSELECT 1 AS one FROM `line_foods` WHERE `line_foods`.`active` = TRUE LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:9:in `index'
+  [1m[36mLineFood Load (4.8ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`active` = TRUE[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:11:in `map'
+  [1m[36mRestaurant Load (2.5ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:12:in `index'
+  [1m[36mFood Load (2.2ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 27 LIMIT 1[0m
+  ↳ app/models/line_food.rb:12:in `total_amount'
+Completed 200 OK in 1052ms (Views: 0.5ms | ActiveRecord: 15.0ms | Allocations: 2505)
+
+
+Started GET "/api/v1/line_foods" for 172.28.0.1 at 2022-07-31 10:51:16 +0900
+Processing by Api::V1::LineFoodsController#index as HTML
+  [1m[36mLineFood Exists? (6.1ms)[0m  [1m[34mSELECT 1 AS one FROM `line_foods` WHERE `line_foods`.`active` = TRUE LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:9:in `index'
+  [1m[36mLineFood Load (3.6ms)[0m  [1m[34mSELECT `line_foods`.* FROM `line_foods` WHERE `line_foods`.`active` = TRUE[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:11:in `map'
+  [1m[36mRestaurant Load (3.3ms)[0m  [1m[34mSELECT `restaurants`.* FROM `restaurants` WHERE `restaurants`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/api/v1/line_foods_controller.rb:12:in `index'
+  [1m[36mFood Load (2.0ms)[0m  [1m[34mSELECT `foods`.* FROM `foods` WHERE `foods`.`id` = 27 LIMIT 1[0m
+  ↳ app/models/line_food.rb:12:in `total_amount'
+Completed 200 OK in 1052ms (Views: 0.5ms | ActiveRecord: 14.9ms | Allocations: 2503)
+
+
