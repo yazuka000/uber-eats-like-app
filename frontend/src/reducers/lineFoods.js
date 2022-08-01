@@ -22,7 +22,7 @@ export const lineFoodsReducer = (state, action) => {
       };
     case lineFoodsActionTypes.FETCH_SUCCESS:
       return {
-        ...state,
+        fetchState: REQUEST_STATE.OK,
         lineFoodsSummary: action.payload.lineFoodsSummary,
       };
     case lineFoodsActionTypes.POSTING:
