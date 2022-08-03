@@ -80,6 +80,10 @@ export const Orders = () => {
     }
   };
 
+  // const isExistsLineFoodsSummary = () => {
+  //   state.fetchState === REQUEST_STATE.OK && state.lineFoodsSummary;
+  // };
+
   return (
     <Fragment>
       <HeaderWrapper>
